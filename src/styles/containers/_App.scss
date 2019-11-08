@@ -1,0 +1,21 @@
+.container {
+	background-color: color('primary');
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.title {
+	color: color('secondary');
+	font-size: 80px;
+	text-align: center;
+}
+
+.photo {
+	height: 491px;
+	width: 497px;
+	background-image: url('../../assets/webpack.png');
+}

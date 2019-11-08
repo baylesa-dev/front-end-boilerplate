@@ -1,0 +1,7 @@
+@function color($color) {
+	@if map-has-key($theme-colors, $color) {
+		@return map-get($theme-colors, $color);
+	}
+
+	@error 'Erreur #{$color} n\'existe pas dans $theme-colors';
+}
