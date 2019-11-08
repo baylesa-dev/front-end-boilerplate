@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Front-Boilerplate</title>
+		<script>
+			const port = 8877
+			const links = []
+			const cssBundles = ['App']
+
+			cssBundles.map(cssBundle =>
+				links.push(`http://localhost:${port}/dist/${cssBundle}.css`)
+			)
+
+			document.write(links.map(link => `<link rel="stylesheet" href="${link}"">`))
+		</script>
+	</head>
+	<body>
+		<noscript>
+			Si vous voyez ce message, cela signifie que
+			<b>JavaScript est désactivé sur votre navigateur</b>. S'il vous plait
+			<b>activez JS</b> pour faire fonctionner cette application.
+		</noscript>
+		<main id="root"></main>
+		<script>
+			{
+				const scripts = []
+				const bundles = ['App', 'react.bundle', 'vendors.bundle']
+				const port = 8877
+
+				bundles.map(bundle => {
+					scripts.push(`http://localhost:${port}/dist/${bundle}.js`)
+				})
+
+				document.write(
+					scripts
+						.map(script => `<script defer src="${script}"><\/script>`)
+						.join('')
+				)
+			}
+		</script>
+	</body>
+</html>
